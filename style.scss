@@ -1,282 +1,85 @@
-// Variabler
-$primar-farg: #3498db;
-$sekundar-farg: #2c3e50;
-$ljus-gra: #f5f5f5;
-$mork-gra: #333;
-$kant-radie: 8px;
-$skugga: 0 2px 10px rgba(0, 0, 0, 0.1);
-$mobil-brytpunkt: 768px;
-
-// Basstilar
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+/* Variables */
+$primary-background-color: rgb(48, 50, 160);
+$primary-about-me-color-gradient: linear-gradient(
+    180deg,
+    rgb(34, 34, 223),
+    rgb(40, 40, 155),
+    rgb(5, 5, 112)
+);
+$primaryh1-font: 'Arial, sans-serif';
+$primaryh1-size: 2.5rem;
+$primaryh1-color: white;
+$primary-img-width: 200px;
+$primary-img-height: 300px;
+$div-box-width: 350px; 
+$div-box-height: 600px; 
+$p-color: white;
+$boxborder: 2px solid black;
 
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    line-height: 1.6;
-    color: $mork-gra;
-    background: linear-gradient(to bottom, #f5f5f5, #e0e0e0);
-    padding: 0;
+    background: $primary-background-color;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: black;
 }
 
-.page-container {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
-}
-
-// Navigering
-.huvudnavigering {
-    background-color: $sekundar-farg;
-    padding: 10px;
-    margin-bottom: 20px;
-
-    ul {
-        display: flex;
-        justify-content: center;
-        flex-wrap: wrap;
-        list-style: none;
-        gap: 20px;
-    }
-
-    a {
-        color: white;
-        text-decoration: none;
-        font-weight: bold;
-
-        &:hover {
-            color: $primar-farg;
-        }
-    }
-}
-
-// Sidhuvud
-.header {
-    text-align: center;
-    padding: 30px 0;
-    margin-bottom: 30px;
-    border-bottom: 2px solid $primar-farg;
-
-    h1 {
-        color: $sekundar-farg;
-        font-size: 2.5rem;
-        margin-bottom: 10px;
-    }
-
-    .undertext {
-        color: $primar-farg;
-        font-size: 1.2rem;
-        font-weight: 500;
-    }
-}
-
-// Gridlayout för huvudinnehåll
-.huvudinnehall {
+.container{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-areas:
-        "om-mig utbildning projekt"
-        "om-mig fardigheter video";
-    gap: 30px;
-
-    @media (max-width: $mobil-brytpunkt) {
-        grid-template-columns: 1fr;
-        grid-template-areas:
-            "om-mig"
-            "utbildning"
-            "fardigheter"
-            "projekt"
-            "video";
-    }
-}
-
-.om-mig {
-    grid-area: om-mig;
-}
-
-.utbildning {
-    grid-area: utbildning;
-}
-
-.fardigheter {
-    grid-area: fardigheter;
-}
-
-.projekt {
-    grid-area: projekt;
-}
-
-.video {
-    grid-area: video;
-}
-
-// Gemensamma sektionsstilar
-.sektion {
-    background: white;
-    border-radius: $kant-radie;
-    box-shadow: $skugga;
-    padding: 25px;
-    margin-bottom: 30px;
-
-    h2 {
-        color: $sekundar-farg;
-        margin-bottom: 20px;
-        padding-bottom: 10px;
-        border-bottom: 2px solid $ljus-gra;
-    }
-}
-
-// Om mig-sektion
-.om-mig-innehall {
-    display: flex;
-    gap: 30px;
-    align-items: flex-start;
-
-    @media (max-width: $mobil-brytpunkt) {
-        flex-direction: column;
-        align-items: center;
-    }
-}
-
-.profilbild {
-    width: 300px;
-    height: 500px;
-    object-fit: cover;
-    border-radius: $kant-radie;
-    border: 5px solid $primar-farg;
-}
-
-.om-mig-text {
-    flex: 1;
-
-    p {
-        margin-bottom: 15px;
-    }
-}
-
-// Utbildningssektion
-.utbildning-post {
-    margin-bottom: 20px;
-    padding-bottom: 20px;
-    border-bottom: 1px solid $ljus-gra;
-
-    &:last-child {
-        margin-bottom: 0;
-        padding-bottom: 0;
-        border-bottom: none;
-    }
-
-    h3 {
-        color: $primar-farg;
-        margin-bottom: 5px;
-    }
-
-    .utbildning-tid {
-        color: #666;
-        font-style: italic;
-        margin-bottom: 5px;
-    }
-}
-
-// Färdighetstabell
-.tabell-container {
-    overflow-x: auto;
-    margin-top: 20px;
-
-    table {
-        width: 100%;
-        border-collapse: collapse;
-
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border: 1px solid #ddd;
-        }
-
-        th {
-            background-color: $sekundar-farg;
-            color: white;
-        }
-
-        tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-    }
-}
-
-// Projektsektion
-.projekt-innehall {
-    display: flex;
-    flex-direction: column;
+    grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-
-    .projektbild {
-        width: 300px;
-        height: 150px;
-        object-fit: cover;
-        border-radius: $kant-radie;
-        border: 1px solid #ddd;
-        align-self: center;
-    }
-}
-
-// Videosektion
-.video-container {
-    position: relative;
-    padding-bottom: 56.25%;
-    height: 0;
-    overflow: hidden;
-    margin-bottom: 15px;
-    border-radius: $kant-radie;
-
-    iframe {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border: none;
-    }
-}
-
-.video-beskrivning {
-    font-style: italic;
-    color: #666;
-    text-align: center;
-}
-
-// Sidfot
-.sidfot {
-    text-align: center;
     padding: 20px;
-    color: #666;
-    font-size: 0.9rem;
+
+
+    @media (max-width: 768px) {
+        grid-template-columns: 1fr;
+    }
 }
 
-// Responsiva anpassningar
-@media (max-width: $mobil-brytpunkt) {
-    .header h1 {
-        font-size: 2rem;
-    }
+.about-me{
+    width: $div-box-width;
+    height: $div-box-height;
+    border: $boxborder;
+    background-color: azure;
 
-    .header .undertext {
-        font-size: 1rem;
+    img{
+        width: $primary-img-width;
+        height: $primary-img-height;
+        margin-left: 50px;
     }
+}
 
-    .sektion {
-        padding: 20px 15px;
-    }
+.project{
+    width: 600px;
+    height: 450px;
+    border: $boxborder;
+    background-color: azure;
 
-    .profilbild {
-        width: 250px;
-        height: 400px;
+    img{
+        margin-left: 25px;
+        width: 550px;
+        height: 300px;
     }
+}
+.video{
+    width: 400px;
+    height: 300px;
+    border: $boxborder;
+    background-color: azure;
 
-    .projektbild {
-        width: 250px;
-        height: 125px;
-    }
+}
+
+.education{
+    width: 300px;
+    height: 200px;
+    border: $boxborder;
+    background-color: azure;
+ 
+}
+
+.table{
+    width: 300px;
+    height: 200px;
+    border: $boxborder;
+    background-color: azure;
+
 }
