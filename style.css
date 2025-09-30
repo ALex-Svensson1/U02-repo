@@ -1,6 +1,6 @@
 /* Variables */
 body {
-  background: rgb(48, 50, 160);
+  background: rgb(47, 51, 235);
   margin: 0;
   font-family: Arial, sans-serif;
   color: black;
@@ -8,57 +8,92 @@ body {
 
 .container {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 20px;
-  padding: 20px;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 15px;
+  padding: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
 }
 @media (max-width: 768px) {
   .container {
     grid-template-columns: 1fr;
+    gap: 10px;
+    padding: 10px;
   }
 }
 
-.about-me {
-  width: 350px;
-  height: 600px;
+.about-me, .project, .video, .education, .table {
   border: 2px solid black;
   background-color: azure;
+  padding: 15px;
+  box-sizing: border-box;
 }
+.about-me h1, .about-me h2, .project h1, .project h2, .video h1, .video h2, .education h1, .education h2, .table h1, .table h2 {
+  margin-top: 0;
+  font-size: 1.5rem;
+}
+.about-me p, .project p, .video p, .education p, .table p {
+  font-size: 0.9rem;
+  line-height: 1.4;
+  margin: 10px 0;
+}
+@media (max-width: 768px) {
+  .about-me, .project, .video, .education, .table {
+    padding: 10px;
+  }
+  .about-me h1, .about-me h2, .project h1, .project h2, .video h1, .video h2, .education h1, .education h2, .table h1, .table h2 {
+    font-size: 1.2rem;
+  }
+  .about-me p, .project p, .video p, .education p, .table p {
+    font-size: 0.85rem;
+  }
+}
+
 .about-me img {
-  width: 200px;
-  height: 300px;
-  margin-left: 50px;
+  display: block;
+  width: 100%;
+  max-width: 180px;
+  height: auto;
+  margin: 10px auto;
 }
 
-.project {
-  width: 600px;
-  height: 450px;
-  border: 2px solid black;
-  background-color: azure;
-}
 .project img {
-  margin-left: 25px;
-  width: 550px;
-  height: 300px;
+  display: block;
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  margin: 10px 0;
 }
 
-.video {
-  width: 400px;
-  height: 300px;
-  border: 2px solid black;
-  background-color: azure;
+.video iframe {
+  width: 100%;
+  height: 250px;
+  border: none;
+}
+@media (max-width: 768px) {
+  .video iframe {
+    height: 200px;
+  }
 }
 
-.education {
-  width: 300px;
-  height: 200px;
-  border: 2px solid black;
-  background-color: azure;
+.table table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
 }
-
-.table {
-  width: 300px;
-  height: 200px;
-  border: 2px solid black;
-  background-color: azure;
+.table table th, .table table td {
+  padding: 8px;
+  text-align: left;
+  border: 1px solid #333;
+}
+.table table th {
+  background-color: rgba(0, 0, 0, 0.1);
+}
+@media (max-width: 768px) {
+  .table table {
+    font-size: 0.75rem;
+  }
+  .table table th, .table table td {
+    padding: 6px;
+  }
 }/*# sourceMappingURL=style.css.map */
