@@ -31,16 +31,18 @@ body {
     box-sizing: border-box;
     width: fit-content;
     max-width: 100%;
+    height: fit-content;
 
     h1, h2 {
         margin-top: 0;
+        margin-bottom: 10px;
         font-size: 1.5rem;
     }
 
     p {
         font-size: 0.9rem;
         line-height: 1.4;
-        margin: 10px 0;
+        margin: 5px 0;
     }
 
     @media (max-width: 768px) {
@@ -49,10 +51,12 @@ body {
 
         h1, h2 {
             font-size: 1.2rem;
+            margin-bottom: 8px;
         }
 
         p {
             font-size: 0.85rem;
+            margin: 5px 0;
         }
     }
 }
