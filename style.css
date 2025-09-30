@@ -1,14 +1,15 @@
 /* Variables */
 body {
-  background: rgb(47, 51, 235);
+  background: linear-gradient(135deg, rgb(30, 60, 180), rgb(60, 100, 220), rgb(30, 60, 180));
+  min-height: 100vh;
   margin: 0;
   font-family: Arial, sans-serif;
   color: black;
 }
 
 .container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  display: flex;
+  flex-wrap: wrap;
   gap: 15px;
   padding: 15px;
   max-width: 1200px;
@@ -16,7 +17,6 @@ body {
 }
 @media (max-width: 768px) {
   .container {
-    grid-template-columns: 1fr;
     gap: 10px;
     padding: 10px;
   }
@@ -27,28 +27,40 @@ body {
   background-color: azure;
   padding: 15px;
   box-sizing: border-box;
+  width: -moz-fit-content;
+  width: fit-content;
+  max-width: 100%;
+  height: -moz-fit-content;
+  height: fit-content;
 }
 .about-me h1, .about-me h2, .project h1, .project h2, .video h1, .video h2, .education h1, .education h2, .table h1, .table h2 {
   margin-top: 0;
+  margin-bottom: 10px;
   font-size: 1.5rem;
 }
 .about-me p, .project p, .video p, .education p, .table p {
   font-size: 0.9rem;
   line-height: 1.4;
-  margin: 10px 0;
+  margin: 5px 0;
 }
 @media (max-width: 768px) {
   .about-me, .project, .video, .education, .table {
     padding: 10px;
+    width: 100%;
   }
   .about-me h1, .about-me h2, .project h1, .project h2, .video h1, .video h2, .education h1, .education h2, .table h1, .table h2 {
     font-size: 1.2rem;
+    margin-bottom: 8px;
   }
   .about-me p, .project p, .video p, .education p, .table p {
     font-size: 0.85rem;
+    margin: 5px 0;
   }
 }
 
+.about-me {
+  max-width: 350px;
+}
 .about-me img {
   display: block;
   width: 100%;
@@ -57,6 +69,9 @@ body {
   margin: 10px auto;
 }
 
+.project {
+  max-width: 550px;
+}
 .project img {
   display: block;
   width: 100%;
@@ -65,6 +80,9 @@ body {
   margin: 10px 0;
 }
 
+.video {
+  max-width: 400px;
+}
 .video iframe {
   width: 100%;
   height: 250px;
@@ -74,6 +92,10 @@ body {
   .video iframe {
     height: 200px;
   }
+}
+
+.education, .table {
+  max-width: 300px;
 }
 
 .table table {
