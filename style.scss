@@ -1,9 +1,10 @@
 /* Variables */
-$primary-background-color: rgb(48, 50, 160);
+$primary-background-color: linear-gradient(135deg, rgb(30, 60, 180), rgb(60, 100, 220), rgb(30, 60, 180));
 $boxborder: 2px solid black;
 
 body {
     background: $primary-background-color;
+    min-height: 100vh;
     margin: 0;
     font-family: Arial, sans-serif;
     color: black;
